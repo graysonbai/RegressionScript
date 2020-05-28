@@ -1,11 +1,12 @@
 import unittest
 from Navigator import *
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 class Regression( unittest.TestCase ):
 
     def setUp(self):
-        self.browser = webdriver.Chrome()
+        self.browser = webdriver.Chrome( ChromeDriverManager().install() )
         self.navigator = Navigator( self.browser )
         self.browser.get( "https://kkstream.testrail.net/index.php?/runs/overview/30" )
         self.navigator.loginPage().userName().input()
@@ -54,7 +55,6 @@ class Regression( unittest.TestCase ):
         self.navigator.addTestPlanPage().editPlanName( "Galaxy S8 (9.0)", "HighTier Plan", "F-C", "Release", "Stg", "Release"  )
         self.navigator.addTestPlanPage().editConfirm().tap()
         self.navigator.addTestPlanPage().acceptTestCasePaln().tap()
-
 
     def test_RegressionDa2(self):
         self.navigator.testRunAndTestResult().addTestPlan().tap()
