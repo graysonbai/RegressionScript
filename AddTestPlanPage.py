@@ -13,10 +13,19 @@ class AddTestPlanPage:
         return BasicTextField( self.label + " > planNameAndroid", lambda : self.browser.find_element_by_id( "name" ) )
 
     def dscription( self, build, link ):
-        return BasicTextField( self.label + " > dscription", lambda : self.browser.find_element_by_id( "description" ) ).input(
+        return BasicTextField( self.label + " > description", lambda : self.browser.find_element_by_id( "description" ) ).input(
             "- " + build + " branch: \n"
             "" + link + "\n\n"
             "- 請使用 branch debug build "
+            "- 請使用 白名單手機 \n"
+            "- Live 訊息發送、Listen With 請改用內網測試 (PEAP, mac-auth) \n"
+        )
+
+    def prodDescription( self, build, link ):
+        return BasicTextField( self.label + " > description", lambda : self.browser.find_element_by_id( "description" ) ).input(
+            "- " + build + " branch: \n"
+            "" + link + "\n\n"
+            "- 請使用 branch Prod build \n"
             "- 請使用 白名單手機 \n"
             "- Live 訊息發送、Listen With 請改用內網測試 (PEAP, mac-auth) \n"
         )

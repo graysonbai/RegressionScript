@@ -103,7 +103,7 @@ class Regression( unittest.TestCase ):
     def test_FinalCheck(self):
         self.navigator.testRunAndTestResult().addTestPlan().tap()
         self.navigator.addTestPlanPage().planNameAndroid().input( "[Sprint ][Android] FinalCheck" )
-        self.navigator.addTestPlanPage().dscription( "Master", "https://utapass-jenkins.kkinternal.com/view/Android/job/UtaPassAndroidMaster/" )
+        self.navigator.addTestPlanPage().prodDescription( "Master", "https://utapass-jenkins.kkinternal.com/view/Android/job/UtaPassAndroidMaster/" )
         self.navigator.addTestPlanPage().addTestSuiteButton().tap()
         self.navigator.addTestPlanPage().selectAddTestSuite().select( "Utapass APP" )
         self.navigator.addTestPlanPage().selectAddTestSuiteOkButton().tap()
@@ -234,7 +234,7 @@ class Regression( unittest.TestCase ):
     def test_FinalCheck_iOS(self):
         self.navigator.testRunAndTestResult().addTestPlan().tap()
         self.navigator.addTestPlanPage().planNameAndroid().input( "[Sprint ][iOS] FinalCheck" )
-        self.navigator.addTestPlanPage().dscription( "Master", "https://utapass-jenkins.kkinternal.com/view/iOS/job/UtaPassiOSMaster/" )
+        self.navigator.addTestPlanPage().prodDescription( "Master", "https://utapass-jenkins.kkinternal.com/view/iOS/job/UtaPassiOSMaster/" )
         self.navigator.addTestPlanPage().addTestSuiteButton().tap()
         self.navigator.addTestPlanPage().selectAddTestSuite().select( "Utapass APP" )
         self.navigator.addTestPlanPage().selectAddTestSuiteOkButton().tap()
@@ -274,6 +274,7 @@ class Regression( unittest.TestCase ):
         self.navigator.addTestPlanPage().editPlanName( "iPhone (13.3.1)", "HighTier Plan", "AT", "Master", "Prod","Master" )
         self.navigator.addTestPlanPage().editConfirm().tap()
         self.navigator.addTestPlanPage().acceptTestCasePaln().tap()
+        time.sleep( 100 )
 
     def tearDown(self):
         self.browser.quit()
