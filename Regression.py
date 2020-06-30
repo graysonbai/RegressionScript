@@ -274,7 +274,6 @@ class Regression( unittest.TestCase ):
         self.navigator.addTestPlanPage().editPlanName( "iPhone (13.3.1)", "HighTier Plan", "AT", "Master", "Prod","Master" )
         self.navigator.addTestPlanPage().editConfirm().tap()
         self.navigator.addTestPlanPage().acceptTestCasePaln().tap()
-        time.sleep( 100 )
 
     def tearDown(self):
         self.browser.quit()
