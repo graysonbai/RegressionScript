@@ -44,7 +44,7 @@ class SelectCasePage:
         return BasicButton( self.label + " > typeButton", lambda : self.browser.find_element_by_link_text( "Type" ) )
 
     def selectAcceptance( self ):
-        return BasicButton( self.label + " > selectAcceptance", lambda: self.browser.find_element_by_xpath( "(//option[@value='1'])[13]" ) )
+        return BasicButton( self.label + " > selectAcceptance", lambda: self.browser.find_element_by_xpath( "(//option[@value='1'])[12]" ) )
 
     def selectFastTag( self ):
         # Fast tag
